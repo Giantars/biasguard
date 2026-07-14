@@ -6,7 +6,11 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
-_Nothing yet._
+### Fixed
+
+- CI: mypy now targets Python 3.12 (`python_version = "3.12"`) so it can parse newer numpy's
+  PEP 695 `type`-statement stubs — the 3.12 matrix job was failing at the type-check step.
+  Runtime support for Python 3.11 is unchanged (guaranteed by `requires-python` and the 3.11 job).
 
 ## [1.0.0] — 2026-07-13
 

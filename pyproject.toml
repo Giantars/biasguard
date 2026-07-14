@@ -91,7 +91,10 @@ line-length = 100
 target-version = ["py311"]
 
 [tool.mypy]
-python_version = "3.11"
+# Analysis target is 3.12 so mypy can parse newer numpy's PEP 695 (`type`
+# statement) stubs; runtime 3.11 support is still guaranteed by requires-python
+# and the 3.11 job in CI (which runs the full test suite).
+python_version = "3.12"
 warn_unused_configs = true
 disallow_untyped_defs = true
 disallow_incomplete_defs = true
